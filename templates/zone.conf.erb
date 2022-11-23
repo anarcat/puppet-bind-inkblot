@@ -4,6 +4,7 @@ zone "<%= @_domain %>" {
 	type <%= @zone_type %>;
 <%- if @dnssec -%>
 	auto-dnssec maintain;
+    inline-signing yes;
 <%-   if @key_directory and @key_directory != '' -%>
 	key-directory "<%= @key_directory %>";
 <%-   else -%>
